@@ -1,0 +1,93 @@
+.header {
+  width: 100%;
+  height: 100px;
+  background: yellow; }
+  .header .header-t {
+    width: 100%;
+    text-align: center; }
+    .header .header-t .mui-icon-back {
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: absolute;
+      top: 0;
+      left: 0; }
+  .header .ipt-money {
+    margin: 0 15px;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid gray;
+    text-align: center; }
+    .header .ipt-money span {
+      border-right: 1px solid gray;
+      font-size: 20px; }
+
+.tab-list {
+  border: 1px solid gray;
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 10px auto; }
+  .tab-list span {
+    font-size: 12px;
+    padding: 10px; }
+    .tab-list span.active {
+      background: #000;
+      color: yellow; }
+
+.swiper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff; }
+  .swiper dl {
+    width: 25%; }
+    .swiper dl.active dt {
+      background: yellow; }
+    .swiper dl dt {
+      width: 40px;
+      height: 40px;
+      background: gray;
+      border-radius: 50%;
+      font-size: 14px;
+      text-align: center;
+      line-height: 40px;
+      margin: 10px auto; }
+    .swiper dl dd {
+      text-align: center;
+      margin-top: 4px;
+      font-size: 12px; }
+
+.select-time {
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 15px;
+  color: gray;
+  background: #fff;
+  font-size: 12px; }
+
+.keyword {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+  .keyword ul {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray; }
+    .keyword ul li {
+      width: 25%; }
+      .keyword ul li span {
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        text-align: center;
+        border-right: 1px solid gray;
+        border-bottom: 1px solid gray;
+        display: block; }
+      .keyword ul li:last-child span {
+        height: 176px;
+        line-height: 176px; }

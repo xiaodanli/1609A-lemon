@@ -1,0 +1,43 @@
+.ipt-wrap {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid gray; }
+  .ipt-wrap span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: yellow;
+    text-align: center;
+    line-height: 40px; }
+  .ipt-wrap input {
+    flex: 1;
+    border: none;
+    text-align: right;
+    font-size: 12px;
+    margin-bottom: 0; }
+
+.icon-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; }
+  .icon-list li {
+    width: 20%; }
+    .icon-list li span {
+      width: 40px;
+      height: 40px;
+      background: yellow;
+      text-align: center;
+      line-height: 40px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 50%; }
+
+.save-btn {
+  width: 70%;
+  height: 30px;
+  background: yellow;
+  color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -35%; }
