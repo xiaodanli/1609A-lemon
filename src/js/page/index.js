@@ -1,5 +1,5 @@
 require(['./js/config.js'], function() {
-	require(['mui', 'dom', 'echarts', 'dtpicker', 'picker', 'poppicker'], function(mui, dom, echarts, dtpicker) {
+	require(['mui', 'dom', 'echarts', 'getUid','moment','dtpicker', 'picker', 'poppicker'], function(mui, dom, echarts,getUid,moment,dtpicker) {
 		console.log(echarts)
 
 		function init() {
@@ -20,6 +20,81 @@ require(['./js/config.js'], function() {
 
 			//初始化图表
 			initTable();
+			
+			//加载数据
+			loadData();
+		}
+		
+		function loadData(){
+			//加载账单
+			loadBill();
+			
+			//加载分类
+			// loadClassify();
+		}
+		
+		//加载账单
+		function loadBill(){
+			var timer = _selectDate.innerHTML,
+				time_type = status === 'month' ? 2 : 1;
+			// classify
+			getUid(function(uid){
+				mui.ajax('/bill/api/getBill',{
+					data:{
+						timer:timer,
+						time_type:time_type,
+						classify:'',
+						uid:uid
+					},
+					dataType:'json',
+					success:function(res){
+						console.log(res);
+						if(res.code === 1){
+							if(status === 'month'){
+								//渲染月的视图
+								renderMonthBill(res.data);
+							}else{
+								//渲染年的视图
+							}
+						}
+					},
+					error:function(error){
+						console.warn(error);
+					}
+				})
+			})
+		}
+		
+		//渲染月的视图
+		function renderMonthBill(data){
+			var obj = {};
+			
+			var target = [];
+			// moment().format('MM-DD');
+			data.forEach(function(item){
+				var time = moment(item.timer).format('MM-DD');
+				console.log(moment(item.timer).format('MM-DD'));
+				if(!obj[time]){
+					obj[time] = {
+						time:time,
+						list:[],
+						totalPay:0
+					}
+				}
+				obj[time].list.push(item);
+				if(item.type === '支出'){
+					obj[time].totalPay += item.money*1;
+				}
+			})
+			
+			// console.log(obj);
+			
+			for(var i in obj){
+				target.push(obj[i]);
+			}
+			
+			console.log(target);
+			
 		}
 
 		function initTable() {
@@ -158,6 +233,9 @@ require(['./js/config.js'], function() {
 
 					dom('.mui-picker[data-id="picker-m"]').style.display = config.isShow;
 					dom('.mui-picker[data-id="picker-y"]').style.width = config.w;
+				
+					//加载账单
+					loadBill();
 				})
 			})
 
@@ -171,8 +249,9 @@ require(['./js/config.js'], function() {
 					} else {
 						_selectDate.innerHTML = selectItems.y.text;
 					}
-
+					loadBill();
 				}))
+				
 			})
 
 			//打开侧边栏
