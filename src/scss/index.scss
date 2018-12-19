@@ -130,6 +130,9 @@
 			margin-right:10px;
 			border-radius: 10px;
 			font-size:12px;
+			&.active{
+				border-color:yellow;
+			}
 		}
 	}
 	

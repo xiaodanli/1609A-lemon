@@ -5,7 +5,7 @@ require.config({
 		picker:'./libs/mui.picker',
 		poppicker:'./libs/mui.poppicker',
 		dtpicker:'./libs/mui.dtpicker',
-		echarts:'https://cdnjs.cloudflare.com/ajax/libs/echarts/4.1.0/echarts',
+		echarts:'./libs/echarts.min',
 		moment:'./libs/moment.min',
 		
 		dom:'./common/dom',

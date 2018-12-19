@@ -33,6 +33,14 @@ gulp.task('server',function(){
 			{
 				source:'/bill/api/getBill',
 				target:'http://localhost:3000/bill/api/getBill'
+			},
+			{
+				source:'/bill/api/delBill',
+				target:'http://localhost:3000/bill/api/delBill'
+			},
+			{
+				source:'/bill/api/getClassify',
+				target:'http://localhost:3000/bill/api/getClassify'
 			}
         ]
     }))

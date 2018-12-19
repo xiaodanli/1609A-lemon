@@ -20,21 +20,17 @@
 					<div class="mui-scroll">
 						<!-- 菜单具体展示内容 -->
 						<h1>收支类型</h1>
-						<ul>
-							<li>全部支出</li>
-							<li>全部收入</li>
+						<ul class="c-type">
+							<li data-id="0">全部支出</li>
+							<li data-id="1">全部收入</li>
 						</ul>
 						<h1>收支分类</h1>
-						<ul>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-							<li>购物</li>
-						</ul>
+						<div class="c-wrap">
+							<!-- 支出的分类 -->
+							<ul class="pay-c classify" data-id="0"></ul>
+							<!-- 收入的分类 -->
+							<ul class="com-c classify" data-id="1"></ul>
+						</div>
 						<button type="button" class="mui-btn mui-btn-primary close-aside">关闭侧边栏</button>
 					</div>
 				</div>
@@ -73,79 +69,10 @@
 							<div class="mui-scroll-wrapper">
 								<div class="mui-scroll">
 									<!--这里放置真实显示的DOM内容-->
-									<div class="month-wrap">
-										<div class="day-item">
-											<div class="day-title">
-												<div>
-													<span class="mui-icon mui-icon-chatboxes"></span>
-													10-11
-												</div>
-												<div>
-													花费
-													<span>1212</span>
-												</div>
-											</div>
-											<ul class="mui-table-view">
-												<li class="mui-table-view-cell">
-													<div class="mui-slider-right mui-disabled">
-														<a class="mui-btn mui-btn-red">删除</a>
-													</div>
-													<div class="mui-slider-handle">
-														<div>
-															<span class="mui-icon mui-icon-chatboxes  y-bg"></span>
-															<span>住宿</span>
-														</div>
-														<div class="red">122.00</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
+									<div class="month-wrap"></div>
 									<!-- 按年显示 -->
 									<div class="year-wrap none">
 										<!-- 以月为循环体 -->
-										<div class="month-item">
-											<ul class="mui-table-view">
-												<li class="mui-table-view-cell mui-collapse">
-													<a class="mui-navigate-right" href="#">
-														<ul class="m-title">
-															<li>
-																<span class="mui-icon mui-icon-chatboxes"></span>
-																<span>10月</span>
-															</li>
-															<li class="red">
-																<span>花费</span>
-																<span>121212</span>
-															</li>
-															<li class="green">
-																<span>收入</span>
-																<span>121212</span>
-															</li>
-															<li class="gray">
-																<span>结余</span>
-																<span>-1212</span>
-															</li>
-														</ul>
-													</a>
-													<div class="mui-collapse-content">
-														<ul class="mui-table-view">
-															<li class="mui-table-view-cell">
-																<div class="mui-slider-right mui-disabled">
-																	<a class="mui-btn mui-btn-red">删除</a>
-																</div>
-																<div class="mui-slider-handle">
-																	<div>
-																		<span class="mui-icon mui-icon-chatboxes y-bg"></span>
-																		<span>住宿</span>
-																	</div>
-																	<div class="red">122.00</div>
-																</div>
-															</li>
-														</ul>
-													</div>
-												</li>
-											</ul>
-										</div>
 									</div>
 								</div>
 							</div>

@@ -105,6 +105,8 @@
       margin-right: 10px;
       border-radius: 10px;
       font-size: 12px; }
+      .aside ul li.active {
+        border-color: yellow; }
 
 .go-bill {
   width: 80px;
